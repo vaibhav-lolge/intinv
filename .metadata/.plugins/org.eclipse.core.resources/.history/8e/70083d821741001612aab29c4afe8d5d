@@ -1,0 +1,7 @@
+package com.inventory.dao;
+
+public interface IRolesDAO {
+	private int id;
+	private int role_name;
+	privateint role_desc;
+}

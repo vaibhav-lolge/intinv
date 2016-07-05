@@ -1,0 +1,19 @@
+package com.inventory.dao;
+
+import java.util.List;
+
+import com.inventory.model.Roles;
+
+public class RolesDAO implements IRolesDAO{
+
+	@Override
+	public List<Roles> getRoles() {
+		return null;
+	}
+
+	@Override
+	public Roles getRole(int id) {
+		return null;
+	}
+
+}

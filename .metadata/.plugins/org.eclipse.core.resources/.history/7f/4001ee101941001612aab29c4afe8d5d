@@ -1,0 +1,5 @@
+package com.inventory.mapper;
+
+public class RolesMapper {
+
+}

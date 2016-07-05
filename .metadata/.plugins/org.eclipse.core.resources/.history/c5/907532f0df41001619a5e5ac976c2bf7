@@ -1,0 +1,23 @@
+package com.inventory.controller;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+public class UserControlController {
+
+	@RequestMapping("/userControl")
+	public String userControl(HttpSession session){
+		
+		logger.debug("----INFO----: UserControlPage.");
+		
+		
+		if(session.getAttribute("loggedInUser")==null){
+			return "login";
+		}
+		else{
+			logger.debug("----INFO----: LOGGED IN USER: " + session.getAttribute("loggedInUser"));
+			return "userControl";
+		}
+	}
+}

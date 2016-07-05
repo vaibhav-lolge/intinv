@@ -1,0 +1,40 @@
+package com.inventory.util;
+
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
+import java.security.SecureRandom;
+
+public class EncryptPassword {
+	
+	public static String getSerucerPassword (String passwordToHash, byte[] salt){
+		String generatePassword = null;
+		try {
+			MessageDigest messageDigest= MessageDigest.getInstance("MD5");
+			//messageDigest.update(salt);
+			byte[] bytes = messageDigest.digest(passwordToHash.getBytes());
+			StringBuilder sb = new StringBuilder();
+			
+			for(int counter=0; counter< bytes.length; counter++){
+				sb.append(Integer.toString((bytes [counter] & 0xff)+0x100,16).substring(1));
+			}
+			
+			generatePassword = sb.toString();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return generatePassword;
+	}
+	
+	
+	public static byte[] getSalt() throws NoSuchAlgorithmException, NoSuchProviderException{
+		
+		SecureRandom random = SecureRandom.getInstance("SHA1PRNG","SUN");
+		byte[] salt = new byte[16];
+		
+		random.nextBytes(salt);
+		
+		return salt;
+	}
+}

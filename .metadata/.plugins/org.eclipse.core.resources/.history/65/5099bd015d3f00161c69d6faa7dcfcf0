@@ -1,0 +1,14 @@
+package com.inventory.test;
+
+import com.inventory.dao.IUserDAO;
+import com.inventory.dao.UserDAO;
+
+public class Test {
+	
+	public static void main(String[] args) {
+		
+		IUserDAO userDao = new UserDAO();
+		
+		
+	}
+}

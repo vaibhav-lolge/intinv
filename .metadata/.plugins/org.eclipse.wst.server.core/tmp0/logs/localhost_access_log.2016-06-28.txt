@@ -1,0 +1,15 @@
+127.0.0.1 - - [28/Jun/2016:20:30:30 +0300] "GET / HTTP/1.1" 404 998
+127.0.0.1 - - [28/Jun/2016:20:33:06 +0300] "GET / HTTP/1.1" 404 998
+0:0:0:0:0:0:0:1 - - [28/Jun/2016:20:34:04 +0300] "GET /IntelligentInventory HTTP/1.1" 404 996
+0:0:0:0:0:0:0:1 - - [28/Jun/2016:20:34:04 +0300] "GET /favicon.ico HTTP/1.1" 404 1020
+0:0:0:0:0:0:0:1 - - [28/Jun/2016:20:34:23 +0300] "GET /intelligentInventory HTTP/1.1" 404 1038
+0:0:0:0:0:0:0:1 - - [28/Jun/2016:20:35:42 +0300] "GET /intelligentInventory/welcome.html HTTP/1.1" 404 1064
+127.0.0.1 - - [28/Jun/2016:20:40:11 +0300] "GET / HTTP/1.1" 404 998
+0:0:0:0:0:0:0:1 - - [28/Jun/2016:20:40:11 +0300] "GET /IntelligentInventory HTTP/1.1" 404 996
+127.0.0.1 - - [28/Jun/2016:20:42:20 +0300] "GET / HTTP/1.1" 404 998
+0:0:0:0:0:0:0:1 - - [28/Jun/2016:20:42:27 +0300] "GET /IntelligentInventory HTTP/1.1" 404 996
+0:0:0:0:0:0:0:1 - - [28/Jun/2016:20:42:32 +0300] "GET /IntelligentInventory/welcome HTTP/1.1" 404 996
+0:0:0:0:0:0:0:1 - - [28/Jun/2016:20:42:49 +0300] "GET /IntelligentInventory/ HTTP/1.1" 404 996
+127.0.0.1 - - [28/Jun/2016:20:44:58 +0300] "GET / HTTP/1.1" 404 998
+0:0:0:0:0:0:0:1 - - [28/Jun/2016:20:45:02 +0300] "GET /IntelligentInventory/ HTTP/1.1" 404 996
+0:0:0:0:0:0:0:1 - - [28/Jun/2016:20:45:10 +0300] "GET /IntelligentInventory/welcome.do HTTP/1.1" 404 1060

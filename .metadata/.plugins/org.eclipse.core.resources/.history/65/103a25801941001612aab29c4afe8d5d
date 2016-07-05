@@ -1,0 +1,22 @@
+package com.inventory.mapper;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.springframework.jdbc.core.RowMapper;
+
+import com.inventory.model.Roles;
+
+public class RolesMapper implements RowMapper<Roles>{
+
+	@Override
+	public Roles mapRow(ResultSet result, int rowNumber) throws SQLException {
+		Roles role = new Roles();
+		role.setId(result.getInt("id"));
+		role.setRole_name(result.getString("role_name"));
+		role.setRole_desc(result.getString("role_desc"));
+		
+		return null;
+	}
+
+}

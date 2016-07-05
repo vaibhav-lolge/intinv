@@ -1,0 +1,11 @@
+package com.inventory.model;
+
+import com.inventory.dao.privateint;
+
+public class Roles {
+
+	
+	private int id;
+	private int role_name;
+	privateint role_desc;
+}

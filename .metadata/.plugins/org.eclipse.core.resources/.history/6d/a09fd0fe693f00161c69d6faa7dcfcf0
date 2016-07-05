@@ -1,0 +1,6 @@
+package com.inventory.service;
+
+public interface ICustomerService {
+
+	public boolean logiCustomer(String userId, String password);
+}

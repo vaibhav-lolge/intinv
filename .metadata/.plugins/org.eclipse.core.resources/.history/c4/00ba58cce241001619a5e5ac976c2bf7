@@ -1,0 +1,45 @@
+package com.inventory.controller;
+
+import javax.servlet.http.HttpSession;
+
+import org.apache.log4j.Logger;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.inventory.model.Roles;
+import com.inventory.service.CustomerService;
+import com.inventory.service.ICustomerService;
+
+
+@Controller
+public class UserControlController {
+
+	private static final Logger logger = Logger.getLogger(InventoryWelcome.class);
+	ICustomerService customerService = new CustomerService();
+	
+	@RequestMapping("/userControl")
+	public String userControl(HttpSession session, Model model){
+		logger.debug("----INFO----: User Control Page.");
+		if(session.getAttribute("loggedInUser")==null){
+			return "login";
+		}
+		else{
+			logger.debug("----INFO----: LOGGED IN USER: " + session.getAttribute("loggedInUser"));		
+			Roles role = customerService.getRole(session.getAttribute("loggedInUser").toString());
+			if(role.getId()!=1){
+				showUserList();
+				return "userControl";
+				
+			}else{
+				showUserList();
+				return "userControl";
+			}
+			
+		}
+	}
+	
+	private void showUserList() {
+		
+	}
+}

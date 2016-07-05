@@ -1,0 +1,13 @@
+package com.inventory.dao;
+
+import java.util.List;
+
+import com.inventory.model.User;
+
+public interface IUserDAO {
+	
+	public void save(User user);	
+	public User getUser(String identifier);	
+	public List<User> getUsers(String name);	
+	public void update(User user);
+}

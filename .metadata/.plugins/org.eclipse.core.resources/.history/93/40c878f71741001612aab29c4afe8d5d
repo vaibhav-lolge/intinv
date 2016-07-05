@@ -1,0 +1,29 @@
+package com.inventory.dao;
+
+import java.util.List;
+
+import javax.sql.DataSource;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.inventory.model.Roles;
+
+public class RolesDAO implements IRolesDAO{
+	
+	@SuppressWarnings("unused")
+	private DataSource dataSource;
+	
+	private JdbcTemplate jdbcTemplate;
+
+	@Override
+	public List<Roles> getRoles() {
+		
+		return null;
+	}
+
+	@Override
+	public Roles getRole(int id) {
+		return null;
+	}
+
+}

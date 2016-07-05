@@ -1,0 +1,14 @@
+package com.inventory.model;
+
+
+
+public class Roles {
+	private int id;
+	private int role_name;
+	private int role_desc;
+	
+	
+	
+}
+
+

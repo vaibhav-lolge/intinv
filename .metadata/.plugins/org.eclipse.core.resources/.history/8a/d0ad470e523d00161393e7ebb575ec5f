@@ -1,0 +1,14 @@
+package com.inventory.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class InventoryWelcome {
+	
+	public ModelAndView welcome(){
+		String message = "Welcome!"
+		return new ModelAndView("welcome", "message", message);
+	}
+
+}

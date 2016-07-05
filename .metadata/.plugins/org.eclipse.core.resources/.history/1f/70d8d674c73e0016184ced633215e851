@@ -1,0 +1,31 @@
+package com.inventory.test;
+
+import java.util.List;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.inventory.dao.IUserDAO;
+import com.inventory.model.User;
+
+public class Test {
+	
+	public static void main(String[] args) {
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("intelligentInventory-servlet.xml");
+		IUserDAO userDAO = context.getBean(IUserDAO.class);
+		
+		User user = new User();
+		user.setIdentifier("identifier123");
+		user.setName("TEST");
+		user.setPassword("22");
+		
+		userDAO.save(user);
+		
+		System.out.println(">>>>>>: User saved");
+		
+		List<User> list= userDAO.getUsers("vaibhav");
+		
+		for(User user : list){
+			
+		}
+	}
+}

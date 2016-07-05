@@ -1,0 +1,9 @@
+package com.inventory.dao;
+
+import com.inventory.model.User;
+
+public interface IUserDAO {
+	
+	public void save(User user);
+	
+}

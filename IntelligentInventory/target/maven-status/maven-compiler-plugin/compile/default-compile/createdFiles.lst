@@ -1,0 +1,9 @@
+com\inventory\test\Test.class
+com\inventory\dao\IUserDAO.class
+com\inventory\model\User.class
+com\inventory\service\ICustomerService.class
+com\inventory\controller\GlobalExceptionController.class
+com\inventory\controller\InventoryWelcome.class
+com\inventory\dao\UserDAO.class
+com\inventory\controller\LoginController.class
+com\inventory\service\CustomerService.class
