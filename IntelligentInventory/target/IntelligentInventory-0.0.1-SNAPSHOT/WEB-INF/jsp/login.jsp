@@ -27,7 +27,8 @@
 
 </head>
 <body>
-
+<br>
+  <div style="text-align: center;"><a href="index.jsp"><img align="middle" src="resources/images/Logo4_blue.png" height="150" width="300"/></a></div>
   <div class="login-box">
  	 <div class="login-logo">
     	<a href="#"><b>iNTELLIGENT</b>iNVENTORY</a>
@@ -36,28 +37,25 @@
   	<div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
 	<span style="color:RED">${loginError}</span>
+	<span style="color:GREEN">${registerSuccessful}</span>
     <form action="login" method="post">
       <div class="form-group has-feedback">
-        <input class="form-control" type="text" id="userId" name="userId" placeholder="User Id">
-        
-        
+        <input class="form-control" type="text" id="userId" name="userId" placeholder="User Id">        
       </div>
       <div class="form-group has-feedback">
-        <input class="form-control" type="password" id="password" name="password" placeholder="Password" >
-        
+        <input class="form-control" type="password" id="password" name="password" placeholder="Password" >       
       </div>
       <div class="row">
         
-        <div class="col-xs-12">
-        	<button id="loginButton" class="btn btn-primary btn-block btn-flat">Login</button>          
-        </div>
-        <!-- /.col -->
+      <div class="col-xs-12">
+         <button id="loginButton" class="btn btn-primary btn-block btn-flat">Login</button>          
+      </div>
       </div>
     </form>
-
+	<br>
     <!-- /.social-auth-links -->
-	<a href="#" class="text-center">Forgot password</a><br>
-    Don't have a membership yet?&nbsp;<a href="#" class="text-center">Register</a>
+	<a href="#" class="text-center">Forgot password</a><br><br>
+    Don't have a membership yet?&nbsp;<a href="register" class="text-center">Register</a>
 
   	</div>
   </div>

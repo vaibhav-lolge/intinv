@@ -51,7 +51,38 @@
   <br><br><br><br>
   <div class="modal-dialog">
 	<span style="color:RED">${authorizationError}</span>
-		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </div>
+  
+   <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        iNTELLIGENT iNVENTORY - DASHBOARD
+        <small>Under construction</small>
+      </h1>
+    </section>
+
+    <section class="content">
+      <div class="box">
+        <div class="box-header with-border">
+          <h3 class="box-title">DASHBOARD</h3>
+        </div>
+        
+        <div class="box-body">
+          Our construction workers are busy getting this page ready for you. We will report to you when it is ready!
+          <div class="row">
+          <div class="col-xs-12 text-center">
+          <button type="button" class="btn btn-default btn-lrg ajax" title="Ajax Request">
+            <i class="fa fa-spin fa-refresh"></i>&nbsp; Getting The Page Ready For You.
+          </button>
+          </div>
+          </div>
+            <div class="ajax-content">
+            </div>
+        </div>
+      </div>
+    </section>
   </div>
   
     

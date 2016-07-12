@@ -2,7 +2,6 @@ package com.inventory.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -49,7 +48,6 @@ public class UserControlController {
 	public String activateDeactivateUser(HttpSession session, Model model, HttpServletRequest request){
 		logger.debug("----INFO----: User Control Page.");
 		String userIdentifier = request.getParameter("deactivate");
-		System.out.println(">>>>>>>>>>>>>>>: "+userIdentifier);
 		return "userControl";
 	}
 	

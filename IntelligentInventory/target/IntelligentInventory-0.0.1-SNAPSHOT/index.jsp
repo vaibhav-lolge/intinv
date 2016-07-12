@@ -28,8 +28,9 @@
 
 </head>
 <body class="welcome">
-	<br><br><br><br>
-	<div class="modal-dialog">
+	<br>
+	<img src="resources/images/Logo4.png" height="150" width="300"/>
+		<div class="modal-dialog">
 		<div class="login-logo">
 	    	<a href="#"><b>iNTELLIGENT</b>iNVENTORY</a>
 	  	</div>
@@ -53,7 +54,7 @@
 						<br>
 		  				<br>
 		  				Proceed to Login or Register if you are not already a member.<br>
-						<a href="#" style="color:white">Register</a>&nbsp; &nbsp;|&nbsp;&nbsp;
+						<a href="register" style="color:white">Register</a>&nbsp; &nbsp;|&nbsp;&nbsp;
 						<a href="login" style="color:white">Login</a>
 					</c:when>
 					<c:otherwise>

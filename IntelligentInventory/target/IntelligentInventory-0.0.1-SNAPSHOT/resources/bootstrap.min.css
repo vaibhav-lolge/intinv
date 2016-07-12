@@ -1352,7 +1352,7 @@ button, input, select, textarea {
 }
 
 a {
-	color: #337ab7;
+	color: #357ca5;
 	text-decoration: none
 }
 
@@ -3414,8 +3414,8 @@ a.btn.disabled, fieldset[disabled] a.btn {
 
 .btn-primary {
 	color: #fff;
-	background-color: #337ab7;
-	border-color: #2e6da4
+	background-color: #357ca5;
+	border-color: #357ca5
 }
 
 .btn-primary.focus, .btn-primary:focus {
@@ -3425,9 +3425,9 @@ a.btn.disabled, fieldset[disabled] a.btn {
 }
 
 .btn-primary:hover {
-	color: #fff;
-	background-color: #286090;
-	border-color: #204d74
+	color: #357ca5;
+	background-color: #fff;
+	border-color: #357ca5
 }
 
 .btn-primary.active, .btn-primary:active, .open>.dropdown-toggle.btn-primary
@@ -6516,7 +6516,6 @@ button.close {
 
 .modal-header {
 	padding: 15px;
-	border-bottom: 1px solid #e5e5e5
 }
 
 .modal-header .close {

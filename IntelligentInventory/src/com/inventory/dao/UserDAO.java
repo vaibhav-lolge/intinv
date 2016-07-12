@@ -1,36 +1,88 @@
 package com.inventory.dao;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
-import javax.sql.DataSource;
-
-import org.springframework.jdbc.core.JdbcTemplate;
-
-import com.inventory.mapper.RolesMapper;
-import com.inventory.mapper.UserMapper;
-import com.inventory.model.Roles;
+import com.inventory.connection.DbConnection;
+import com.inventory.model.ReturnMessage;
 import com.inventory.model.User;
 
 public class UserDAO{
 	
-	@SuppressWarnings("unused")
-	private DataSource dataSource;
 	
-	private JdbcTemplate jdbcTemplate;
-	
-
-	
-	public void save(User user) {		
-		
-	}
-
 	
 	public User getUser(String identifier) {
-		String SQL="select * from users where identifier =?";
-		User user= jdbcTemplate.queryForObject(SQL, new Object[]{identifier}, new UserMapper());
-		return user;
+		
+		try {
+			User user = new User();
+			Connection con = DbConnection.getConnection();
+			Statement stmt = con.createStatement();
+			String SQL="select * from users where identifier ='" + identifier+"'";
+			ResultSet result = stmt.executeQuery(SQL);
+			while (result.next()) {
+				user.setId(result.getString("id"));
+				user.setName(result.getString("name"));
+				user.setPassword(result.getString("password"));
+				user.setIdentifier(result.getString("identifier"));
+				user.setRole(result.getInt("role"));
+				user.setActive(result.getInt("active"));
+			}
+			
+			result.close();
+			stmt.close();
+			con.close();
+			
+			return user;
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return null;
 	}
 
+	
+
+	public ReturnMessage saveUser(User user){
+		ReturnMessage returnMsg = new ReturnMessage();
+		Connection con = DbConnection.getConnection();
+		try {
+			Statement stmt = con.createStatement();
+			
+			
+			String SQL = "select count(*) from users where identifier = '" +user.getIdentifier()+"'"; 
+			ResultSet result = stmt.executeQuery(SQL);
+			int count = 0;
+			while(result.next()){
+				count = result.getInt(1);
+			}
+			 if (count >0){
+				 returnMsg.setSuccess(false);
+				 returnMsg.setMessage("Identifier already exist. Please choose another identifier and try again.");
+				 return returnMsg;
+			 }else{
+				SQL = "insert into users (name, password, identifier,role, active) values ('" + user.getName() + "','"
+						+ user.getPassword() + "','" + user.getIdentifier() + "'," + user.getRole() + "," + user.getActive() + ")";
+				stmt.execute(SQL);
+				returnMsg.setSuccess(true);
+				returnMsg.setMessage("Registeration Successful! Please login to continue.");
+				stmt.close();
+				con.close();
+				result.close();
+				return returnMsg;
+			 }
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			returnMsg.setSuccess(false);
+			returnMsg.setMessage("Some error has occured while processing your request. Please cantact IT support.");
+			return returnMsg;
+		}
+	}
 	
 	public List<User> getUsers(String name) {
 		return null;
@@ -38,35 +90,37 @@ public class UserDAO{
 
 	
 	public void update(User user) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	public void setDataSource(DataSource dataSource) {
-		this.dataSource = dataSource;
-		this.jdbcTemplate = new JdbcTemplate(dataSource);
-	}
-
-	public boolean saveUser(User user) {
-		String SQL = "insert into users (name, password, identifier,role, active) values (?,?,?,?,?)";
-		int returnValue = jdbcTemplate.update(SQL, user.getName(), user.getPassword(), user.getIdentifier(), user.getRole(), user.getActive());
-		if(returnValue > 0)
-			return true;
-		else
-			return false;
 	}
 
 
-	public Roles getRoleForUser(String identifier) {
-		String SQL = "select * from roles where roles.id = (select role from users where identifier = ?)";
-		Roles role = jdbcTemplate.queryForObject(SQL, new Object[]{identifier}, new RolesMapper());
-		return role;
-	}
 
 
 	public List<User> getUserList() {
-		String SQL = "select * from users";
-		List<User> userList = jdbcTemplate.query(SQL, new UserMapper());
+		List<User> userList = new ArrayList<User>();
+		Connection con = DbConnection.getConnection();
+		try {
+			Statement stmt = con.createStatement();
+			String SQL = "select * from users";
+			ResultSet result = stmt.executeQuery(SQL);
+			
+			while (result.next()) {
+				User user = new User();
+				user.setId(result.getString("id"));
+				user.setName(result.getString("name"));
+				user.setPassword(result.getString("password"));
+				user.setIdentifier(result.getString("identifier"));
+				user.setRole(result.getInt("role"));
+				user.setActive(result.getInt("active"));
+				userList.add(user);
+			}
+			
+			result.close();
+			stmt.close();
+			con.close();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return userList;
 	}
 

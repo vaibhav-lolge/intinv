@@ -1,7 +1,0 @@
-package com.inventory.mapper;
-
-import org.springframework.jdbc.core.RowMapper;
-
-public class UserMapper implements RowMapper<User>{
-
-}

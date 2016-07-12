@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.inventory.model.ReturnMessage;
 import com.inventory.model.Roles;
+import com.inventory.model.User;
 import com.inventory.service.CustomerService;
 import com.inventory.service.ICustomerService;
 
@@ -38,19 +40,25 @@ public class RegisterController {
 	
 	
 	@RequestMapping(value="/register", method = RequestMethod.POST)
-	public String verifyLogin(@RequestParam String name, 
+	public String registerUser(@RequestParam String name, 
 			@RequestParam String password, @RequestParam String identifier, @RequestParam String role,  HttpSession session, Model model){
 		
 		ICustomerService customerService = new CustomerService();
 		List <Roles> rolesList = customerService.getRoles();
 		model.addAttribute("user_roles", rolesList);
-		
-		if (customerService.registerUser(name, password, identifier,Integer.parseInt(role), active)){
+		User user = new User();
+		user.setActive(active);
+		user.setIdentifier(identifier);
+		user.setRole(Integer.parseInt(role));
+		user.setPassword(password);
+		user.setName(name);
+		ReturnMessage returnMsg = customerService.registerUser(user);
+		if (returnMsg.isSuccess()){
 			logger.debug("---INFO---: User registered: " + name);
-			model.addAttribute("registerSuccessful", "Registration Successful! Please login to continue.");
+			model.addAttribute("registerSuccessful", returnMsg.getMessage());
 			return "login";
 		}else{
-			model.addAttribute("registerError", "Error occured while registered. Please try again");
+			model.addAttribute("registerError", returnMsg.getMessage());
 			return "register";
 		}
 		

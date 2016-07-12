@@ -40,7 +40,7 @@
   <div class="register-logo">
     <a href="welcome"><b>iNTELLIGENT</b>iNVENTORY</a>
   </div>
-
+  <span style="color:RED">${registerError}</span>
   <div class="register-box-body">
     <p class="login-box-msg">Register a new membership</p>
 
