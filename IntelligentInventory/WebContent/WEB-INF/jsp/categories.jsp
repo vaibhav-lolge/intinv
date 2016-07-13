@@ -78,49 +78,8 @@
                 <button type="submit" class="btn btn-primary">Add Category</button>
               </div>
             </form>
-          </div>
-        </div>
-      </div>  
-      
-      <div class="row">
-      	 <div class="col-xs-12">
-           <div class="box box-primary">
-           
-            <div class="box-header with-border">
-              <h3 class="box-title">List of Available Categories</h3>
-            </div>
-            
-            <table class="table table-hover">
-	           <tr>
-	           	<th>Category Identifier</th>
-	           	<th>Category Name</th>
-	           	<th>Category Description</th>
-	           	<th>Active / inactive</th>
-		       </tr>
-		       <tr>
-	           	<td>HW01</td>
-	           	<td>Hardware</td>
-	           	<td>Used for hardware like screws, nuts etc. </td>
-	           	<td>Active</td>
-		       </tr>
-		       <tr>
-	           	<td>HW02</td>
-	           	<td>Hardware</td>
-	           	<td>Used for hardware like screws, nuts etc. </td>
-	           	<td>Active</td>
-		       </tr>
-		       <tr>
-	           	<td>HW03</td>
-	           	<td>Hardware</td>
-	           	<td>Used for hardware like screws, nuts etc. </td>
-	           	<td>Active</td>
-		       </tr>
-	        </table>
-            
-            
-            <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Refresh</button>
-              </div>
+
+             	
           </div>
         </div>
       </div>  

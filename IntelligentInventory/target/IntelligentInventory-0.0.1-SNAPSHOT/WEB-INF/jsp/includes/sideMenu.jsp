@@ -36,7 +36,15 @@
             <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
-            <li><a href="categories"><i class="fa fa-circle-o"></i> Categories</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Categories
+            	<i class="fa fa-angle-left pull-right"></i>
+            	</a>
+            	 <ul class="treeview-menu">
+		            <li><a href="categories"><i class="fa fa-circle-o"></i>Add Categories</a></li>
+		            <li><a href="categoriesList"><i class="fa fa-circle-o"></i>List Categories</a></li>
+		            <li><a href="searchCategory"><i class="fa fa-circle-o"></i>Edit Categories</a></li>
+		         </ul>
+            </li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Sub-Categories</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Items</a></li>
           </ul>

@@ -8,6 +8,18 @@ public class Category {
 	int active;
 	
 	
+	public Category() {
+		super();
+	}
+	
+	public Category(String categoryIdentifier, String categoryName, String categoryDesc, int active){
+		super();
+		this.categoryDesc = categoryDesc;
+		this.categoryIdentifier = categoryIdentifier;
+		this.categoryName = categoryName;
+		this.active = active;
+	}
+	
 	public String getCategoryIdentifier() {
 		return categoryIdentifier;
 	}

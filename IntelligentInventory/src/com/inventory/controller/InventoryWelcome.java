@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -14,7 +15,7 @@ public class InventoryWelcome {
 	
 	
 	@RequestMapping("/welcome")
-	public String welcome(HttpSession session){
+	public String welcome(HttpSession session, Model model){
 		
 		logger.debug("----INFO----: HOME PAGE.");
 		if(session.getAttribute("loggedInUser")==null){

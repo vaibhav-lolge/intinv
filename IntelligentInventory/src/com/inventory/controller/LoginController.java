@@ -19,7 +19,7 @@ public class LoginController {
 	private static final Logger logger = Logger.getLogger(InventoryWelcome.class);
 	
 	@RequestMapping(value="/login", method = RequestMethod.GET)
-	public String showLoginForm(HttpSession session){
+	public String showLoginForm(HttpSession session, Model model){
 		logger.debug("---INFO---: LOGIN PAGE");
 		if(session.getAttribute("loggedInUser")==null){
 			return "login";
